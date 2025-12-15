@@ -7,7 +7,7 @@
             char[] letters = word.ToCharArray();
             char[] dragged = new char[letters.Length];
             bool outw = false;
-            int s = 1;
+           
             for (int i = 0; i < letters.Length; i++)
             {
                 outw = false;
@@ -16,25 +16,22 @@
                 {
                     if (i < letters.Length)
                     {
-                        dragged[s] = letters[i];
+                        dragged[key] = letters[i];
                         outw = true;
 
                     }
-                    else if (s == letters.Length)
+                    else if (key == letters.Length)
                     {
                         dragged[0] = letters[i];
                         outw = true;
                     }
-                    s++;
+                    key++;
                 }
             }
             string result = new string(dragged);
             return result;
 
         }
-
-
-
         static string Ceasar_code(string word, char[] alphabet, int key)
         {
             char[] letters = word.ToCharArray();
